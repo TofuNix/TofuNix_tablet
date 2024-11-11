@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Tablet NUI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Linux Tablet</h1>
+            <div id="status-bar">
+                <span id="time">12:00</span>
+                <span id="battery">🔋 100%</span>
+                <button id="close-button" onclick="closeApp()">X</button>
+            </div>
+        </header>
+        <main>
+            <div id="desktop">
+                <div id="app-list">
+                    <h2>Applications</h2>
+                    <ul>
+                        <li onclick="openApp('terminal')"><i class="fas fa-terminal"></i> Terminal</li>
+                        <li onclick="openApp('file-manager')"><i class="fas fa-folder"></i> File Manager</li>
+                        <li onclick="openApp('settings')"><i class="fas fa-cog"></i> Settings</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="app-content" style="display: none;">
+                <h2 id="app-title"></h2>
+                <div id="app-body"></div>
+                <button onclick="closeApp()">Close</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Listen for messages from Lua
+        window.addEventListener('message', function(event) {
+            if (event.data.action === 'openTablet') {
+                document.body.style.display = 'flex';  // Show the tablet
+            } else if (event.data.action === 'closeTablet') {
+                document.body.style.display = 'none';  // Hide the tablet
+            }
+        });
+    </script>
+</body>
+</html>

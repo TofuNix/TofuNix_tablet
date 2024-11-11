@@ -1,0 +1,96 @@
+body {
+    font-family: 'Ubuntu', sans-serif; /* Use a Linux-like font */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: none; /* Initially hidden */
+}
+
+.container {
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background-color: #1e1e1e;
+    border: 2px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+main {
+    padding: 10px;
+    flex-grow: 1;
+    position: relative; /* Position relative for absolute positioning of desktop */
+}
+
+#desktop {
+    background-image: url('./images/bg.jpeg'); /* Test with a placeholder image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background */
+    height: 100%; /* Full height */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #444;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+li i {
+    margin-right: 10 px; /* Space between icon and text */
+}
+
+li:hover {
+    background-color: #555; /* Change background on hover */
+}
+
+#app-content {
+    padding: 10px;
+    background-color: #2e2e2e;
+    border-radius: 5px;
+}
+
+#app-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#app-body {
+    font-family: 'Courier New', monospace; /* Terminal-like font for terminal app */
+    background-color: #000;
+    color: #00ff00; /* Green text for terminal */
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
