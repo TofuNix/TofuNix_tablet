@@ -17,13 +17,7 @@ end)
 -- Event to handle when the tablet is closed
 RegisterNetEvent('tablet:client:tabletClosed', function()
     SetNuiFocus(false, false)  -- Remove focus from the NUI
-    -- Additional logic can be added here if needed
 end)
-
--- Function to notify the player (optional)
-function notifyPlayer(message)
-    TriggerEvent('chatMessage', "SERVER", "normal", message)
-end
 
 -- Example of handling NUI callbacks (e.g., when the user closes the tablet)
 RegisterNUICallback('closeTablet', function(data, cb)
@@ -33,20 +27,8 @@ RegisterNUICallback('closeTablet', function(data, cb)
     cb('ok')  -- Acknowledge the callback
 end)
 
--- Example of handling other NUI messages (e.g., button clicks)
-RegisterNUICallback('someButtonAction', function(data, cb)
-    -- Handle button action here
-    cb('ok')  -- Acknowledge the callback
-end)
-
--- Unique command to open the tablet directly from the chat
+-- Command to open the tablet directly from the chat
 RegisterCommand("openMyTablet", function()
     print("Command to open tablet triggered")  -- Debugging line
-    openTablet()
-end)
-
--- Optional: Add a command to test if the tablet can be opened without using an item
-RegisterCommand("testOpenTablet", function()
-    print("Testing tablet opening without item")  -- Debugging line
-    openTablet()
+    openTablet()  -- Call the openTablet function with empty data
 end)

@@ -12,7 +12,7 @@ files {
     'html/index.html',  -- Main HTML file
     'html/style.css',   -- CSS file
     'html/script.js',   -- JavaScript file
-    -- Add any other files you need here
+    'html/images/bg.jpeg' -- Add your background image here
 }
 
 client_script 'client.lua'  -- Your client-side script
